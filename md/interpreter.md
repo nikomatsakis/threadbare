@@ -67,6 +67,7 @@ sequenceDiagram
         activate I
         I->>S1: think "Categorize..."
         deactivate I
+        activate S1
         S1-->>I: Do uuid=0
         activate I
 
@@ -78,6 +79,7 @@ sequenceDiagram
                 Note over I: interpret(inner Think)
                 I->>S2: think "Extract..."
                 deactivate I
+                activate S2
                 S2-->>I: Do uuid=0
                 activate I
 
@@ -88,6 +90,7 @@ sequenceDiagram
                 I->>S2: send result
                 deactivate I
                 S2-->>I: Complete
+                deactivate S2
                 activate I
             end
         end
@@ -95,6 +98,7 @@ sequenceDiagram
         I->>S1: send result
         deactivate I
         S1-->>I: Complete
+        deactivate S1
         activate I
     end
     deactivate I
