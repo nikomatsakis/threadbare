@@ -1,4 +1,4 @@
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum Ast {
@@ -16,6 +16,7 @@ pub enum Ast {
     },
 }
 
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Think {
     pub prompt: String,
     pub children: Vec<Ast>,
